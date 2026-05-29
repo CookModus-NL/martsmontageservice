@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <rect width="800" height="800" fill="#F3EFE8"/>
+  <circle cx="400" cy="400" r="80" fill="#F26A1B"/>
+  <text x="400" y="420" text-anchor="middle" font-family="Inter, system-ui" font-weight="700" font-size="60" fill="white">M</text>
+  <text x="400" y="510" text-anchor="middle" font-family="Inter, system-ui" font-size="14" fill="#5F5A4E" letter-spacing="0.3em">FOTO 07</text>
+</svg>

@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+@theme {
+  /* ─── Marts Montage Service — Premium Workshop ────────── */
+  /* Bron: facebook.com/martsmontageservice — verfijnde oranje + warme grijzen */
+
+  /* Marts oranje — iets ingehouden voor premium uitstraling */
+  --color-mart-50:  #FFF7F1;
+  --color-mart-100: #FFE9D6;
+  --color-mart-200: #FFD0A8;
+  --color-mart-300: #FFB071;
+  --color-mart-400: #FF8E3A;
+  --color-mart-500: #F26A1B;
+  --color-mart-600: #D45615;
+  --color-mart-700: #A84211;
+  --color-mart-800: #7D300C;
+  --color-mart-900: #4F1E07;
+
+  /* Warm grijs — werkplaats elegantie */
+  --color-stone-50:  #FAF8F4;
+  --color-stone-100: #F3EFE8;
+  --color-stone-200: #E5DFD3;
+  --color-stone-300: #C9C0AE;
+  --color-stone-400: #8C8674;
+  --color-stone-500: #5F5A4E;
+  --color-stone-600: #46423A;
+  --color-stone-700: #2F2B27;
+  --color-stone-800: #1F1C19;
+  --color-stone-900: #14110F;
+
+  /* Steel — voor donkere accenten */
+  --color-steel-50:  #F7F8F9;
+  --color-steel-100: #EEF0F2;
+  --color-steel-200: #DCE0E4;
+  --color-steel-300: #C0C6CC;
+  --color-steel-400: #8E959C;
+  --color-steel-500: #5F646A;
+  --color-steel-600: #3F4248;
+  --color-steel-700: #2A2D32;
+  --color-steel-800: #1A1C20;
+  --color-steel-900: #0F1112;
+
+  /* Bone / paper — warmer */
+  --color-bone:   #FAF7F1;
+  --color-cream: #F4EFE5;
+  --color-grid:  #E4DDD0;
+
+  /* ─── Backward-compat aliassen (oude classes blijven werken) ─── */
+  --color-paper: var(--color-bone);
+  --color-mist:  var(--color-stone-200);
+  --color-clay:  var(--color-stone-100);
+
+  --color-primary-50:  var(--color-stone-50);
+  --color-primary-100: var(--color-stone-100);
+  --color-primary-200: var(--color-stone-200);
+  --color-primary-300: var(--color-stone-300);
+  --color-primary-400: var(--color-stone-400);
+  --color-primary-500: var(--color-stone-500);
+  --color-primary-600: var(--color-stone-600);
+  --color-primary-700: var(--color-stone-700);
+  --color-primary-800: var(--color-stone-800);
+  --color-primary-900: var(--color-stone-900);
+
+  --color-accent-50:  var(--color-mart-50);
+  --color-accent-100: var(--color-mart-100);
+  --color-accent-200: var(--color-mart-200);
+  --color-accent-300: var(--color-mart-300);
+  --color-accent-400: var(--color-mart-400);
+  --color-accent-500: var(--color-mart-500);
+  --color-accent-600: var(--color-mart-600);
+  --color-accent-700: var(--color-mart-700);
+  --color-accent-800: var(--color-mart-800);
+  --color-accent-900: var(--color-mart-900);
+
+  /* ─── Typografie ────────────────────────────── */
+  --font-display: 'Inter Variable', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-sans:    'Inter Variable', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+
+  --breakpoint-3xl: 110rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-bone);
+  }
+  body {
+    background: var(--color-bone);
+    color: var(--color-stone-700);
+    font-family: var(--font-sans);
+    font-feature-settings: 'cv11', 'ss01';
+    font-optical-sizing: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    color: var(--color-stone-900);
+    letter-spacing: -0.025em;
+    font-weight: 600;
+  }
+  h1 { font-weight: 700; letter-spacing: -0.04em; }
+  *:focus-visible {
+    outline: 2px solid var(--color-mart-500);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  ::selection {
+    background: var(--color-mart-500);
+    color: #FFFFFF;
+  }
+  ::-webkit-scrollbar { width: 12px; height: 12px; }
+  ::-webkit-scrollbar-track { background: var(--color-bone); }
+  ::-webkit-scrollbar-thumb { background: var(--color-stone-300); border-radius: 6px; border: 3px solid var(--color-bone); }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-mart-500); }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16;
+  }
+  .container-tight {
+    @apply mx-auto w-full max-w-5xl px-6 sm:px-10 lg:px-16;
+  }
+
+  /* Buttons — verfijnd, minder shouty */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-stone-900 px-7 py-3.5 text-[14px] font-medium text-white transition-all duration-300 hover:bg-mart-500 active:scale-[0.98];
+  }
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-mart-500 px-7 py-3.5 text-[14px] font-medium text-white transition-all duration-300 hover:bg-mart-600 active:scale-[0.98];
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-stone-300 bg-transparent px-7 py-3.5 text-[14px] font-medium text-stone-900 transition-all duration-300 hover:border-stone-900 hover:bg-stone-900 hover:text-white active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-stone-600 transition-all hover:text-stone-900 hover:bg-stone-100;
+  }
+
+  /* Eyebrow — geen streepje, M-bullet */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-mart-500;
+  }
+  .eyebrow::before {
+    content: '◆';
+    @apply text-[7px] text-mart-500 leading-none;
+  }
+
+  /* Premium card — zacht, geen harde schaduw */
+  .card {
+    @apply rounded-2xl border border-stone-200 bg-white p-8 transition-all duration-300;
+    box-shadow: 0 1px 2px 0 rgba(15, 17, 18, 0.04);
+  }
+  .card:hover {
+    @apply border-stone-300;
+    box-shadow: 0 8px 24px -4px rgba(15, 17, 18, 0.08);
+  }
+  .card-accent {
+    @apply rounded-2xl bg-mart-500 p-8 text-white transition-all duration-300 relative overflow-hidden;
+  }
+  .card-accent::after {
+    content: '';
+    @apply absolute inset-0 pointer-events-none;
+    background: radial-gradient(800px circle at 80% 0%, rgba(255,255,255,0.15), transparent 60%);
+  }
+
+  /* Stamp — service tag */
+  .stamp {
+    @apply rounded-full border border-stone-300 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-700;
+  }
+  .stamp-accent {
+    @apply rounded-full bg-mart-500 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-white;
+  }
+
+  /* Workshop pattern subtiel */
+  .work-grid {
+    background-image:
+      linear-gradient(to right, var(--color-grid) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-grid) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  /* Reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .reveal-delay-1 { animation-delay: 0.08s; }
+  .reveal-delay-2 { animation-delay: 0.16s; }
+  .reveal-delay-3 { animation-delay: 0.24s; }
+  .reveal-delay-4 { animation-delay: 0.32s; }
+
+  .img-zoom { @apply overflow-hidden; }
+  .img-zoom img { @apply transition-transform duration-700 ease-out; }
+  .img-zoom:hover img { transform: scale(1.04); }
+
+  .num-display {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum';
+    letter-spacing: -0.04em;
+  }
+}
+
+@keyframes reveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 40s linear infinite; }

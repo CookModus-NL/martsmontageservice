@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80" role="img" aria-label="Marts Montage Service">
+  <defs>
+    <style>
+      .name { font: 800 26px/1 'Inter Variable', system-ui, sans-serif; fill: #0F1112; letter-spacing: -0.025em; text-transform: uppercase; }
+      .sub  { font: 500 11px/1 'Inter Variable', system-ui, sans-serif; fill: #6B7178; letter-spacing: 0.02em; }
+    </style>
+  </defs>
+  <!-- M-mark: oranje cirkel met grijze M -->
+  <circle cx="32" cy="40" r="28" fill="#FF6B1F" stroke="#0F1112" stroke-width="2.5"/>
+  <text x="32" y="51" text-anchor="middle" font-family="'Inter Variable', system-ui, sans-serif" font-weight="900" font-size="34" fill="#2F3338" letter-spacing="-0.04em">M</text>
+  <!-- Woordmerk -->
+  <text class="name" x="74" y="38">Marts</text>
+  <text class="sub"  x="74" y="56">Montage Service</text>
+</svg>
